@@ -1,0 +1,96 @@
+<div class="container">
+    <form class="w-50 mx-auto mt-5"[formGroup]="flightForm" #ref="ngForm" (ngSubmit)="onSubmit()">
+       <div class="mb-3">
+           <label for="title">Id:</label>
+           <input type="text" id="id" class="form-control" formControlName="id" placeholder="Enter the flight id">
+           <div *ngIf="id?.invalid&&(id?.dirty||id?.touched||ref.submitted)" class="text-danger">
+               <p *ngIf="id?.errors?.['required']">Id is required</p>
+           </div>
+       </div>
+    
+       <div class="mb-3">
+           <label for="type">type:</label>
+           <select id="type" formControlName="type">
+               <option *ngFor="let type of types" class="form-control" [value]="type">{{type}}</option>
+           </select><br>
+           <div *ngIf="flightForm.get('type').hasError('required')">Required</div>
+       </div>
+    
+       <div class="mb-3">
+           <label for="imageUrl">Choose Image</label>
+           <input type="file" id="imageUrl" class="form-control" name="imageUrl" formControlName="imageUrl" placeholder="Select file" (input)="onChange(f.files[0])" #f >
+           <div *ngIf="imageUrl?.invalid&&(imageUrl?.dirty||imageUrl?.touched||ref.submitted)" class="text-danger">
+               <p *ngIf="imageUrl?.errors?.['required']">Url is required</p>
+    
+           </div>
+       </div>
+    
+       <div class="mb-3">
+           <label for="from">from:</label>
+           <textarea id="from" formControlName="from" placeholder="Enter the from location" cols="30"></textarea>
+           <div *ngIf="from?.invalid&&(from?.dirty||from?.touched||ref.submitted)" class="text-danger">
+               <p *ngIf="from?.errors?.['required']">From locaton is required</p>
+    
+           </div>
+       </div>
+    
+       <div class="mb-3">
+           <label for="to">to:</label>
+           <textarea id="to" formControlName="to" placeholder="Enter to location" cols="30"></textarea>
+           <div *ngIf="to?.invalid&&(to?.dirty||to?.touched||ref.submitted)" class="text-danger">
+               <p *ngIf="to?.errors?.['required']">to location is required</p>
+    
+           </div>
+       </div>
+    
+       <div class="mb-3">
+           <label for="departureTime">departureTime:</label>
+           <textarea id="departureTime" formControlName="departureTime" placeholder="Enter Departurtime" cols="30"></textarea>
+           <div *ngIf="departureTime?.invalid&&(departureTime?.dirty||departureTime?.touched||ref.submitted)" class="text-danger">
+               <p *ngIf="departureTime?.errors?.['required']">departureTime is required</p>
+    
+           </div>
+       </div>
+
+       <div class="mb-3">
+        <label for="arrivalTime">arrivalTime:</label>
+        <textarea id="arrivalTime" formControlName="arrivalTime" placeholder="Enter Departurtime" cols="30"></textarea>
+        <div *ngIf="arrivalTime?.invalid&&(arrivalTime?.dirty||arrivalTime?.touched||ref.submitted)" class="text-danger">
+            <p *ngIf="arrivalTime?.errors?.['required']">arrivalTime is required</p>
+ 
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="departureDate">departureDate:</label>
+        <textarea id="departureDate" formControlName="departureDate" placeholder="Enter departureDate" cols="30"></textarea>
+        <div *ngIf="departureDate?.invalid&&(departureDate?.dirty||departureDate?.touched||ref.submitted)" class="text-danger">
+            <p *ngIf="departureDate?.errors?.['required']">departureDate is required</p>
+ 
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="arrivalDate">arrivalDate:</label>
+        <textarea id="arrivalDate" formControlName="arrivalDate" placeholder="Enter arrivalDate" cols="30"></textarea>
+        <div *ngIf="arrivalDate?.invalid&&(arrivalDate?.dirty||arrivalDate?.touched||ref.submitted)" class="text-danger">
+            <p *ngIf="arrivalDate?.errors?.['required']">arrivalDate is required</p>
+ 
+        </div>
+    </div>
+    
+       <div class="buttons">
+           <button type="submit">Submit</button>
+           <button type="reset">Reset</button>
+           <button routerLink="user-profile/:username">Go back</button>
+    
+       </div>
+    
+    
+    
+    </form>
+   </div>
+
+<!-- <h2>Admin</h2>
+<button (click)="editFlight()">Edit Flight</button>
+<button (click)="getFlights()">Get Flights</button> -->

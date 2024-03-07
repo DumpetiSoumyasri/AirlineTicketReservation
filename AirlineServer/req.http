@@ -1,0 +1,13 @@
+post http://localhost:4000/flight-api/flight
+Content-Type: application/json
+
+{
+    "id": "01",
+    "type": "AirIndia",
+    "from": "Hyderabad",
+    "to": "Mumbai",
+    "departureTime": "10:00 AM",
+    "arrivalTime": "12:00 PM",
+    "departureDate": "01-10-2024",
+    "arrivalDate": "01-15-2024"
+}

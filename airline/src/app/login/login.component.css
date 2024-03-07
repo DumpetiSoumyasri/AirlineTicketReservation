@@ -1,0 +1,15 @@
+.merge{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.card{
+    background-color: aliceblue;
+
+}
+
+.first{
+    background-image:url(../../assets/air3.jpg);
+    background-size: cover;
+    height:vh;
+}

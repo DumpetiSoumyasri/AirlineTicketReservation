@@ -1,0 +1,38 @@
+<div class="card bg-info mx-auto mt-5 mb-5 w-50" style="width: 50rem; ">
+<p class="name text-center text-dark">Customer Login</p>
+<!-- username and password (apply validations) -->
+ 
+<form class="w-50 mx-auto mt-5" [formGroup]="userCredentials" #ref="ngForm" (ngSubmit)="onSubmitUser()">
+    <!-- username -->
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label> 
+        <input type="text" formControlName="username" id="username" class="form-control">
+        <!-- validation error message for username -->
+        <div *ngIf="
+        username?.invalid &&
+        (username?.dirty || username?.touched || ref.submitted)
+      " class="text-danger">
+            <p *ngIf="username?.errors?.['required']">Username is required</p>
+            <!-- <p *ngIf="username?.errors?.['minlength']">Min length is 4</p>
+            <p *ngIf="username?.errors?.['maxlength']">Max length is 6</p> -->
+        </div>
+    </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label> 
+            <input type="password" formControlName="password" id="password" class="form-control">
+            <!-- validation error message for username -->
+            <div *ngIf="
+            password?.invalid &&
+            (password?.dirty || password?.touched || ref.submitted)
+          " class="text-danger">
+                <p *ngIf="password?.errors?.['required']">Password is required</p>
+                <!-- <p *ngIf="username?.errors?.['minlength']">Min length is 4</p>
+                <p *ngIf="username?.errors?.['maxlength']">Max length is 6</p> -->
+            </div>
+            <button class="btn btn-success d-block mx-auto m-3">Login</button>
+        </div>
+</form>
+<div class="merge" style="margin-left: 70px;">
+    <p class="text-light">Login as a Admin, <a routerLink="/adminlogin">Admin Login</a></p>
+</div>
+</div>

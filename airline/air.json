@@ -1,0 +1,160 @@
+{
+  "customers": [
+    {
+      "id": "6d44",
+      "username": "soumya",
+      "password": "123456",
+      "email": "2308357@cognizant.com",
+      "dob": "2024-01-01"
+    },
+    {
+      "id": "9960",
+      "username": "kulfii",
+      "password": "kulfiii",
+      "email": "kulfii@mail.com"
+    },
+    {
+      "id": "b35f",
+      "username": "soumya",
+      "password": "123456",
+      "email": "soumya@gmail.com"
+    },
+    {
+      "id": "48dc",
+      "username": "soumya",
+      "password": "123456",
+      "email": "soumya@gmail.com"
+    },
+    {
+      "id": "b4f2",
+      "username": "soumya",
+      "password": "123456",
+      "email": "soumyasri002@gmail.com"
+    },
+    {
+      "id": "5163",
+      "username": "soumya",
+      "password": "123456",
+      "email": "soumyasri002@gmail.com"
+    },
+    {
+      "id": "5f9c",
+      "username": "soumya",
+      "password": "123456",
+      "email": "soumyasri002@gmail.com"
+    },
+    {
+      "id": "9b01",
+      "username": "soumya",
+      "password": "123456",
+      "email": "soumyasri002@gmail.com"
+    }
+  ],
+  "admins": [
+    {
+      "id": "1677",
+      "username": "soumya",
+      "password": "ssssss",
+      "email": "2308357@cognizant.com",
+      "dob": "2023-12-31"
+    },
+    {
+      "id": "ee95",
+      "username": "soumya",
+      "password": "123456",
+      "email": "2308357@cognizant.com",
+      "dob": "2024-01-16"
+    },
+    {
+      "id": "2059",
+      "username": "charan",
+      "password": "charan",
+      "email": "charan@mail.com"
+    },
+    {
+      "id": "0cc4",
+      "username": "tanu",
+      "password": "123456",
+      "email": "s4667@gmail.com"
+    }
+  ],
+  "DEparture": [
+    {
+      "id": "01",
+      "type": "AirIndia",
+      "from": "Hyderabad",
+      "to": "Mumbai",
+      "Departuretime": "10:00 AM",
+      "Arrivaltime": "12:00 PM",
+      "DepartureDate": "01-10-2024",
+      "ArrivalDate": "01-15-2024"
+    },
+    {
+      "id": "02",
+      "type": "IndiGo",
+      "from": "Hyderabad",
+      "to": "Chennai",
+      "Departuretime": "2:00 PM",
+      "Arrivaltime": "04:00 PM",
+      "DepartureDate": "02-05-2024",
+      "ArrivalDate": "02-08-2024"
+    },
+    {
+      "id": "720a"
+    }
+  ],
+  "Departure": [
+    {
+      "id": "03",
+      "type": "Air India",
+      "from": "Chennai",
+      "to": "Banglore",
+      "Departuretime": "06:00 AM",
+      "Arrivaltime": "07:30 PM",
+      "DepartureDate": "01-22-2024",
+      "ArrivalDate": "01-26-2024"
+    },
+    {
+      "id": "04",
+      "type": "IndiGo",
+      "from": "Delhi",
+      "to": "Mumbai",
+      "Departuretime": "10:00 AM",
+      "Arrivaltime": "12:00 PM",
+      "DepartureDate": "02-12-2024",
+      "ArrivalDate": "02-15-2024"
+    },
+    {
+      "id": "05",
+      "type": "SpiceJet",
+      "from": "Delhi",
+      "to": "Banglore",
+      "Departuretime": "08:00 AM",
+      "Arrivaltime": "102:00 PM"
+    },
+    {
+      "id": "06",
+      "type": "airAsiaIndia",
+      "from": "Chennai",
+      "to": "Mumbai",
+      "Departuretime": "05:00 PM",
+      "Arrivaltime": "09:00 PM"
+    },
+    {
+      "id": "07",
+      "type": "airIndia",
+      "from": "Hyderabad",
+      "to": "Mumbai",
+      "Departuretime": "10:00 AM",
+      "Arrivaltime": "12:00 PM"
+    },
+    {
+      "id": "08",
+      "type": "airIndia",
+      "from": "Banglore",
+      "to": "Hyderabad",
+      "Departuretime": "02:00 AM",
+      "Arrivaltime": "04:00 AM"
+    }
+  ]
+}

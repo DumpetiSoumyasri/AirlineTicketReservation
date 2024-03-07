@@ -1,0 +1,10 @@
+.name{
+    display: flex;
+    flex-direction: row;
+    /* padding-right: 100%; */
+}
+.user{
+    display: flex;
+    flex-direction: row;
+
+}

@@ -1,0 +1,55 @@
+ <p class="display-1 text-center text-dark">Search your Flight</p>
+ <div class="card bg-info mx-auto mt-5 mb-5 w-75" style="width: 50rem; ">
+    <form class="w-50 mx-3 mt-5"[ FormGroup ]="searchForm"  (ngSubmit)="searchFlights()">
+       <div class="name">
+        <div class="mb-3 mx-2">
+            <label for="departure" class="form-label">Departure</label>
+            <select formControlName="departure">
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Hyderabad</option>
+                <option>Chennai</option>
+                <option>Banglore</option>
+            </select>
+        </div>
+            <div class="mb-3 mx-2">
+                <label for="arrival" class="form-label mr-2">Arrival</label> 
+                <select formControlName="arrival">
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                    <option>Banglore</option>
+                </select>
+            </div>
+            <div class="user">
+         
+            <div class="mb-3 mx-4">
+                <label for="nop" class="form-label">No.of.Passengers</label>
+                <input type="number" formControlName="nop" id="nop" class="form-control">
+            </div>
+            <div class="mb-3 mx-4">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" formControlName="date" id="date" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success d-block mx-4 m-3" (click)="topSearch()">Search</button>
+            <button type="submit" class="btn btn-success d-block mx-4 m-3" (click)="reset()">Reset</button>
+            </div>
+        </div>
+        
+    </form>
+    <div *ngIf="flights.length > 0; else noFlightsFound">
+            <div *ngFor="let flight of flights">
+                <div>
+                    <span>{{flight.id}}</span>
+                    <span>{{flight.departureTime}} to {{flight.arrivalTime}}</span>
+
+
+                </div>
+            </div>
+    </div>
+    <ng-template #noFlightsFound>
+        <p>No flights found</p>
+       </ng-template>
+</div>
+

@@ -1,0 +1,23 @@
+body{
+    background-color: aliceblue;
+}
+.merge{
+    display:flex;
+    flex-direction: row;
+}
+.name{
+    font-size: 50px;
+}
+.card{
+    background-color: rgb(20, 141, 150);
+}
+.image{
+    background-image:url(../../assets/air5.jpg);
+    background-size: cover;
+    height:100vh;
+}
+.heading{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+}
