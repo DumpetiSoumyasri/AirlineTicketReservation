@@ -8,22 +8,16 @@ const getAllFlights = async (req, res) => {
 };
 
 const createFlight = async (req,res) => {
-    const flight=JSON.parse(req.body.articleObj);
-    // const newFlight = await Flight.create(req.body)
-       //upload image to cloudinary
-       let result=await cloudinary.uploader.upload(req.file.path);
-       //add cloudinary image url to article
-       flight.imageUrl=result.url;
+    console.log(req.body)
+
+    const flight=req.body
+
+    let existingFlight = await Flight.findOne({id:req.body.id});
+    if(existingFlight !== null){
+        return res.send({message:"Flight already existed with given ID"});
+    }
        const newFlight = await Flight.create(flight);
-    //remove image from local folder
-    fs.unlink(req.file.path,err=>{
-        if(err){
-            throw err
-        }
-        console.log('image removed from local folder')
-    });
     res.status(201).send({ message: "flight added", payload: newFlight })
-    // res.send({message:"flight added", payload: newFlight})
 }
 
 const updateFlight = async (req,res) => {
@@ -34,11 +28,20 @@ const updateFlight = async (req,res) => {
 const deleteFlight = async (req,res) => {
     let id = req.params.id
     let deletedFlight = await Flight.findOneAndDelete({id:id});
-    res.send({message:"flight deleted",payload:deletedFlight})
+    res.send({message:"flight deleted",payload:deletedFlight,deletedCount:deletedFlight.deletedCount})
+}
+
+const getFlightById= async (req,res)=>{
+    let id=req.params.id;
+    console.log("id from params",id)
+    let flightDetails=await Flight.findOne({id:id})
+    console.log(flightDetails)
+    res.send({message:"flight details by id",payload:flightDetails })
+
 }
 
 
-module.exports = { getAllFlights,createFlight,updateFlight,deleteFlight }
+module.exports = { getAllFlights,createFlight,updateFlight,deleteFlight,getFlightById }
 
 
 

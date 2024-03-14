@@ -6,17 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 
-
-
-// @Component({
-//   selector: 'app-root',
-//   template: `
-//     <h1>Air Ticket Reservation App</h1>
-//     <app-customer></app-customer>
-//     <app-admin></app-admin>
-//   `,
-//   styles: [],
-// })
 export class AppComponent {
   title="airline";
 }

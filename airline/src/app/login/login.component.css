@@ -11,5 +11,5 @@
 .first{
     background-image:url(../../assets/air3.jpg);
     background-size: cover;
-    height:vh;
+    height:100vh;
 }

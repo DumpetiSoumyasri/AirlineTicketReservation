@@ -1,27 +1,46 @@
-<label for="departloc">Filter by Departure location</label>
-<input type="text" name="departloc" id="departloc" [(ngModel)]="departloc">
+<div class="image">
+  <label for="departloc">Filter by Departure location</label>
+  <input type="text" name="departloc" id="departloc" [(ngModel)]="departloc">
 
-<label for="arrivloc">Filter by Arrival location</label>
-<input type="text" name="arrivloc" id="arrivloc" [(ngModel)]="arrivloc">
+  <label for="arrivloc">Filter by Arrival location</label>
+  <input type="text" name="arrivloc" id="arrivloc" [(ngModel)]="arrivloc">
 
-<button class="btn btn-outline-primary" (click)="filterFlightsByLoc()">Search</button>
+  <button class="btn btn-outline-primary" (click)="filterFlightsByLoc()">Search</button>
 
+  <br>
 
+  @if(!isUser){
+  <button class="btn btn-outline-primary" routerLink="/admin/:username">Add Flight</button>
+  }
+  @else{
 
-<h3 class="text-center" style="color:black;">Available Flights</h3>
- <div class="merge container mx-auto">
+  }
+  <h3 class="text-center mt-3" style="color:black;">Available Flights</h3>
+  <div class="merge container mx-auto">
     <div class="row row-cols-sm-2 row-cols-md-3 g-4">
-<div class="card mx-4" style="width: 18rem;" *ngFor="let flight of filteredFlights">
-    <img src="../../assets/flight1.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Flight id:{{flight.id}}</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Flight type:{{flight.type}}</h6>
-      <h6 class="card-subtitle mb-2 text-body-secondary">From:{{flight.from}}</h6>
-      <h6 class="card-subtitle mb-2 text-body-secondary">To:{{flight.to}}</h6>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Departuretime:{{flight.departureTime}}</h6>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Arrivaltime:{{flight.arrivalTime}}</h6>
-      <button class="btn btn-outline-success mx-3" (click)="Bookflight()">Book Ticket</button>
+      @for(flight of filteredFlights; track flight.id){
+      <div class="card mx-4" style="width: 18rem;">
+        <img src="../../assets/flight1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Flight id:{{flight.id}}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Category: {{flight.category}}</h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">From: {{flight.from}}</h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">To: {{flight.to}}</h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Departuretime: {{flight.departureTime}}</h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Arrivaltime: {{flight.arrivalTime}}</h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">DepartureDate: {{flight.departureDate|date:'longDate'}}
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">ArrivalDate: {{flight.arrivalDate|date:'longDate'}}</h6>
+          @if(isUser){
+          <button class="btn btn-outline-success mx-3" (click)="Bookflight(flight.id)">Book Ticket</button>
+          }
+          @else{
+          <button class="btn btn-outline-success mx-3" (click)="deleteFlight(flight.id)">Delete Flight</button>
+          }
+
+        </div>
+      </div>
+      }
     </div>
-    </div>
+  </div>
 </div>
-</div> 

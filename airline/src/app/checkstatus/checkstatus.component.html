@@ -1,0 +1,63 @@
+<div>
+        <div class=" mx-auto mt-5 mb-5 w-50 col-sm-2 col-lg-2 col-md-3 col-xs-6">
+            <caption class="fw-b text-center fs-2">Ticket Details</caption>
+            <table class="table border border-dark mt-3 table-light p-2">
+            <tr>
+                <td>username:</td>
+                <td>{{formData?.username}}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{formData?.email}}</td>
+            </tr>
+            <tr>
+                <td>Mobile Number:</td>
+                <td>{{formData?.mblno}}</td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>{{formData?.gender}}</td>
+            </tr>
+            <tr>
+                <td>Flight id:</td>
+                <td>{{flightDetails?.id}}</td>
+            </tr>
+            <tr>
+                <td>Airline:</td>
+                <td>{{flightDetails?.category}}</td>
+            </tr>
+            <tr>
+                <td>Category:</td>
+                <td>{{flightDetails?.type}}</td>
+            </tr>
+            <tr>
+                <td>Source location:</td>
+                <td>{{flightDetails?.from}}</td>
+            </tr>
+            <tr>
+                <td>Destination location:</td>
+                <td>{{flightDetails?.to}}</td>
+            </tr>
+            <tr>
+                <td>Departure Time</td>
+                <td>{{flightDetails?.departureTime}}</td>
+            </tr>
+            <tr>
+                <td>Arrival time</td>
+                <td>{{flightDetails?.arrivalTime}}</td>
+            </tr>
+            <tr>
+                <td>Departure date</td>
+                <td>{{flightDetails?.departureDate|date:'longDate'}}</td>
+            </tr>
+            <tr>
+                <td>Arrival date</td>
+                <td>{{flightDetails?.arrivalDate|date:'longDate'}}</td>
+            </tr>
+            <tr>
+                <td>Cost</td>
+                <td>{{flightDetails?.cost}}</td>
+            </tr>
+        </table>
+        </div>
+</div>

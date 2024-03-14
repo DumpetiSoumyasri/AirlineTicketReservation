@@ -1,20 +1,21 @@
 const mongoose=require('mongoose')
- 
 //create user Schema
-const flightaddSchema=new mongoose.Schema({
-    id:{type:Number,required:true},
-    type:{type:String,required:true},
-    from:{type:String,required:true},
-    to:{type:String,required:true},
-    imageUrl:{type:String,required:true},
-    departureTime:{type:String,required:true},
-    arrivalTime:{type:String,required:true},
-    departureDate:{type:String,required:true},
-    arrivalDate:{type:String,required:true}
+const adminSchema=new mongoose.Schema({
+    username:{
+        type:String,
+        required:true,
+        minLength:4
+    },
+    password:{
+        type:String,
+        required:[true,'password is required']
+    },
+    email:String,
+    dob:String
 })
-//create model(class) for that userSchema
-const Addflight=mongoose.model('flight',flightaddSchema)
- 
- 
+//create model(class) for that sellerSchema
+const Admin=mongoose.model('admin',adminSchema)
+
+
 //export user model
-module.exports=Addflight;
+module.exports=Admin;

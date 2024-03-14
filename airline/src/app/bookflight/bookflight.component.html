@@ -1,0 +1,79 @@
+<div class="image">
+    <h3 class="text-center" style="color: rgb(142, 177, 96);">Ticket Booking</h3>
+
+    <h4 class="text-center">Already Booked your ticket? Check your status <a (click)="onSubmit()">Click here!</a></h4>
+    <h2 class="text-info text-center">Book Your Ticket Here:</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 mt-2 mx-auto">
+                <div class="bg-light mx-auto">
+                        <form class="w-75 mx-auto mt-2" [formGroup]="flightticketForm" #ref="ngForm"
+                            (ngSubmit)="onSubmit()">
+                            <div class="merge">
+                                <div class="mx-2">
+                                    <label for="username" class="form-label">Username:</label>
+                                    <input type="text" formControlName="username" id="username" class="form-control">
+                                    <div *ngIf="username.invalid && (username.dirty || username.touched || ref.submitted )"
+                                        class="text-danger">
+                                        <p *ngIf="username?.errors?.['required']">Username is required</p>
+                                        <p *ngIf="username?.errors?.['minlength']">Min length is 4</p>
+                                        <p *ngIf="username?.errors?.['maxlength']">Max length is 20</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- email -->
+                            <div class="merge">
+                                <div class="mx-2">
+                                    <label for="email" class="form-label">Email ID:</label>
+                                    <input type="email" formControlName="email" id="email" class="form-control">
+                                    <!-- validation msg for email -->
+                                    <div *ngIf="email.invalid && (email.dirty || email.touched || ref.submitted)"
+                                        class="text-danger">
+                                        <p *ngIf="email?.errors?.['required']">Email ID is required</p>
+                                        <p *ngIf="email?.errors?.['email']">Enter Valid Email</p>
+                                    </div>
+                                </div>
+                                <!-- dob -->
+                                <div class="mx-2">
+                                    <label for="dob" class="form-label">Date of Birth:</label>
+                                    <input type="date" formControlName="dob" id="dob" class="form-control">
+                                    <!-- validation msg for dob -->
+                                    <div *ngIf="dob.invalid && (dob.dirty || dob.touched || ref.submitted )"
+                                        class="text-danger">
+                                        <p *ngIf="dob ?.errors?.['required']">DOB is required</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- mblno -->
+                            <div class="merge">
+                                <div class="mx-2">
+                                    <label for="mblno" class="form-label">Mobile Number:</label>
+                                    <input type="tel" formControlName="mblno" id="mblno" class="form-control">
+                                    <!-- validation msg for mblno -->
+                                    <div *ngIf="mblno.invalid && (mblno.dirty || mblno.touched || ref.submitted )"
+                                        class="text-danger">
+                                        <p *ngIf="mblno ?.errors?.['required']">Mobile Number is required</p>
+                                        <p *ngIf="mblno ?.errors?.['pattern']">Enter Valid Number</p>
+                                    </div>
+                                </div>
+                                <div class="mx-2">
+                                    <label for="gender" class="form-label">Gender: </label>
+                                    <select formControlName="gender" id="gender" class="form-control">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Transgender">Transgender</option>
+                                    </select>
+                                    <!-- validation msg for gender -->
+                                    <div *ngIf="gender.invalid && (gender.dirty || gender.touched || ref.submitted)"
+                                        class="text-danger">
+                                        <p *ngIf="gender?.errors?.['required']">Gender is required</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary d-block mx-auto mt-3 mb-2">BookTicket</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

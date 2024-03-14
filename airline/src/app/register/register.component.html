@@ -1,5 +1,5 @@
 <div class="image">
-  <p class="display-2 text-center text-success">REGISTERATION</p>
+  <p class="display-2 text-center text-dark"><strong>REGISTERATION</strong></p>
   @if(duplicateUserStatus===true){
   <p class="text-danger fs-2 text-center">User already existed</p>
   }
@@ -32,6 +32,7 @@
         <input type="email" formControlName="email" id="email" class="form-control">
         <div *ngIf="email?.invalid &&(email?.dirty||email?.touched||ref.submitted)">
           <p *ngIf="email?.errors?.['required']" class="text-danger">Email is required</p>
+          <p *ngIf="email?.errors?.['email']">Enter Valid Email</p>
         </div>
       </div>
 
@@ -53,8 +54,9 @@
       <button type="submit" class="btn btn-success mb-5 text-center d-block mx-auto">Register</button>
     </form>
     <div class="text-center merge">
-      <p class="mx-auto text-light">Already registered?</p>
-      <a routerLink="/login" class="mx-auto">Login Here!</a>
+      <p class="mx-auto text-light">Already registered?<a routerLink="/login" class="mx-auto text-dark">Login Here!</a>
+      </p>
+
     </div>
   </div>
 </div>

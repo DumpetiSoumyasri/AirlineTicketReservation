@@ -1,3 +1,7 @@
-.foot{
-    background-color: blue;
+.clearfix{
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    justify-content: space-around;
 }
+

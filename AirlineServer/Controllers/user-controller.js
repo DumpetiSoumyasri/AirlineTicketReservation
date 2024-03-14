@@ -3,16 +3,16 @@ const User = require("../Models/user");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require('dotenv').config()
- 
+
 const getUsers = async (req, res) => {
   const usersList = await User.find();
   res.status(200).send({ message: "users", payload: usersList });
 };
- 
+
 const getUserByUsername = (req, res) => {
   res.send({ message: "one user" });
 };
- 
+
 //Create new User
 const createUser = async (req, res) => {
   //check for existing user with same username
@@ -26,10 +26,10 @@ const createUser = async (req, res) => {
   //replace plain password with hashed pw
   req.body.password = hashedPassword;
   const newUser = await User.create(req.body);
- 
+
   res.status(201).send({ message: "User created", payload: newUser });
 };
- 
+
 //User login
 const loginUser = async (req, res) => {
   //get user crdentials object from req
@@ -59,7 +59,7 @@ const loginUser = async (req, res) => {
     .status(200)
     .send({ message: "login success", token: signedToken, user: user });
 };
- 
+
 const updateUser = async (req, res) => {
   let user = await User.findOneAndUpdate(
     { username: req.body.username },
@@ -67,15 +67,15 @@ const updateUser = async (req, res) => {
   );
   res.status(200).send({ message: "User modified", payload: user });
 };
- 
+
 const removeUser = (req, res) => {
   res.send({ message: "user removed" });
 };
- 
- 
- 
-const getSensitiveData=(req,res)=>{
-  res.send({message:"User's sensitve data is here"})
+
+
+
+const getSensitiveData = (req, res) => {
+  res.send({ message: "User's sensitve data is here" })
 }
 //export
 module.exports = {

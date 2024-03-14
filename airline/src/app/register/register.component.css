@@ -12,12 +12,14 @@ body{
     background-color: rgb(20, 141, 150);
 }
 .image{
-    background-image:url(../../assets/air5.jpg);
+    background-image:url(../../assets/air4.jpg);
     background-size: cover;
-    height:100vh;
+    height:130vh;
 }
 .heading{
     display:flex;
     flex-direction:row;
     justify-content:space-evenly;
 }
+
+

@@ -1,13 +1,13 @@
 <div class="first">
-  <p class="display-1 text-center text-success">LOGIN</p>
+  <p class="display-1 text-center text-success"><strong>LOGIN</strong></p>
   <div class="container">
     <div class="row">
       @if(userCredentialsError.userCredErrStatus){
       <p class="text-danger fs-3 text-center">{{userCredentialsError.userCredErrMsg}}</p>
       }
     </div>
-    <div class="card mx-auto mt-6 mb-5 w-50" style="width: 50rem;">
-      <form class="w-75 mx-auto form mt-3" [formGroup]="userCredentials" (ngSubmit)="onSubmitUser()" #ref="ngForm">
+    <div class="card mx-auto mt-6 w-50" style="width: 50rem; margin-top: 15vh;">
+      <form class="w-75 mx-auto form mt-" [formGroup]="userCredentials" (ngSubmit)="onSubmitUser()" #ref="ngForm">
 
         <div class="text-center">
           <input type="radio" formControlName="loginType" id="user" value="user">
@@ -33,8 +33,7 @@
 
       </form>
       <div class="merge text-center">
-        <p class="text-light mx-auto">Didn't register yet?</p>
-        <a routerLink="/register" class="mx-auto">Register Here!</a>
+        <p class="text-primary mx-auto">Didn't register yet? <a routerLink="/register" class="mx-auto">Register Here!</a></p>
       </div>
     </div>
   </div>

@@ -1,18 +1,19 @@
 <ul class="head nav p-2 bg-blue">
     @if(logout===false){
     <li class="nav-item">
-     <a class="nav-link text-dark" routerLink="home" routerLinkActive="active">Home</a>
+        <a class="nav-link text-dark" routerLink="home" routerLinkActive="active">Home</a>
     </li>
     <li class="nav-item">
-     <a class="nav-link text-dark" routerLink="register" routerLinkActive="active">Register</a>
+        <a class="nav-link text-dark" routerLink="register" routerLinkActive="active">Register</a>
     </li>
     <li class="nav-item">
-     <a class="nav-link text-dark" routerLink="login" routerLinkActive="active">Login</a>
+        <a class="nav-link text-dark" routerLink="login" routerLinkActive="active">Login</a>
     </li>
 
-}@else{
+    }@else{
     <li class="nav-item">
-        <a class="nav-link text-dark" routerLink="customerlogin" routerLinkActive="active" (click)="userLogout()">Logout</a>
+        <a class="nav-link text-dark" routerLink="login" routerLinkActive="active"
+            (click)="userService.userLogout()">Logout</a>
     </li>
-}
-  </ul>
+    }
+</ul>

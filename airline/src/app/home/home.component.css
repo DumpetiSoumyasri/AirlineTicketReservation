@@ -1,3 +1,15 @@
 .img{
     height:550px;
 }
+
+.carousel-caption {
+    position: absolute;
+    bottom:-40px,
+ }
+
+ .font{
+    font-style: oblique;
+    font-size: 3rem;
+
+    
+ }
